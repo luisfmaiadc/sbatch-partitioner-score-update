@@ -1,0 +1,13 @@
+CREATE DATABASE dbUserScore;
+CREATE DATABASE sbatch_execution;
+USE dbUserScore;
+
+CREATE TABLE TbUsers (
+     id BIGINT AUTO_INCREMENT PRIMARY KEY,
+     name VARCHAR(150) NOT NULL,
+     score DECIMAL(10,2) NOT NULL DEFAULT 0,
+     status VARCHAR(20) NOT NULL,
+     last_update TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX idx_tb_users_status ON TbUsers(status);
